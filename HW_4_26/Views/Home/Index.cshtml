@@ -1,0 +1,20 @@
+﻿@using HW_4_26.Models;
+@model ImageViewModel
+
+@foreach(var images in Model.Images)
+{
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="bg-light p-4 rounded shadow mb-3" style="margin-bottom: 20px; text-align: center;">
+                <a href="/home/viewimage?id=@images.Id">
+                    <h3>@images.Title</h3>
+                    <h5>@images.DateUploaded.ToLongDateString()</h5>
+                    <img src="/uploads/@images.FileName" style="width: 800px;" />
+                </a>
+            </div>
+
+        </div>
+    </div>
+}
+
+       
